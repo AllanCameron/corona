@@ -6,6 +6,10 @@ populations <- structure(list(Region = c("Ayrshire and Arran", "Borders",
 306640, 585700, 1183120, 321700, 661900, 907580, 22270, 22920,
 417470, 26720)), row.names = c(NA, -14L), class = "data.frame")
 
+hb_map <- sf::read_sf(paste0("https://raw.githubusercontent.com/mbronsvo/",
+                             "covid19_scotland/master/SG_NHS_HealthBoards",
+                             "_2019c.geojson"))
+
 get_scotdf <- function()
 {
   base_url   <- "https://raw.githubusercontent.com/DataScienceScotland/"
@@ -287,3 +291,5 @@ ggplot() +
           axis.title.y = element_text(vjust = 5),
           plot.title  = element_text(vjust = 5))
 }
+
+
